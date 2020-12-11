@@ -126,5 +126,5 @@ STATIC_URL = '/static/'
 
 # we whitelist localhost:3000 because that's where frontend will be served
 CORS_ORIGIN_WHITELIST = (
-     'http://localhost:3000',
+     'http://localhost:3000','https://dreamy-lewin-4a632d.netlify.app',
  )
