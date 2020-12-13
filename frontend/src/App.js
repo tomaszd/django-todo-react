@@ -43,13 +43,13 @@ class App extends Component {
           onClick={() => this.displayCompleted(true)}
           className={this.state.viewCompleted ? "active" : ""}
         >
-          complete
+          Completed
         </span>
         <span
           onClick={() => this.displayCompleted(false)}
           className={this.state.viewCompleted ? "" : "active"}
         >
-          Incomplete
+          Incompleted
         </span>
       </div>
     );
@@ -75,7 +75,7 @@ class App extends Component {
         <span>
           <button
             onClick={() => this.editItem(item)}
-            className="btn btn-secondary mr-2"
+            className="btn btn-primary mr-2"
           >
             {" "}
             Edit{" "}
