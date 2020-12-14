@@ -73,6 +73,12 @@ class App extends Component {
           {item.title}
         </span>
         <span>
+         <button
+            onClick={() => this.handleToggle(item)}
+            className="btn btn-secondary mr-2"
+          >
+            {item.completed ? 'Not completed': 'Complete Task'}
+          </button>
           <button
             onClick={() => this.editItem(item)}
             className="btn btn-primary mr-2"
@@ -117,6 +123,13 @@ class App extends Component {
   editItem = item => {
     this.setState({ activeItem: item, modal: !this.state.modal });
   };
+  handleToggle = item => {
+    console.log(item);
+    item.completed=!item.completed;
+    console.log(item.completed);
+    this.setState({ activeItem: item});
+  };
+
   render() {
     return (
       <main className="content">
