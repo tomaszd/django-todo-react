@@ -38,19 +38,22 @@ class App extends Component {
   };
   renderTabList = () => {
     return (
-      <div className="my-5 tab-list">
+      <div className="my-5 tab-list ">
         <span
           onClick={() => this.displayCompleted(true)}
           className={this.state.viewCompleted ? "active" : ""}
         >
-          Completed
+          Show completed
         </span>
         <span
           onClick={() => this.displayCompleted(false)}
           className={this.state.viewCompleted ? "" : "active"}
         >
-          Incompleted
+          Show tasks to do
         </span>
+        <button onClick={this.createItem} className="btn btn-primary mr-20">
+          Add task
+        </button>
       </div>
     );
   };
@@ -83,14 +86,13 @@ class App extends Component {
             onClick={() => this.editItem(item)}
             className="btn btn-primary mr-2"
           >
-            {" "}
-            Edit{" "}
+            Edit
           </button>
           <button
             onClick={() => this.handleDelete(item)}
             className="btn btn-danger"
           >
-            Delete{" "}
+            Delete
           </button>
         </span>
       </li>
@@ -137,11 +139,7 @@ class App extends Component {
         <div className="row ">
           <div className="col-md-6 col-sm-10 mx-auto p-0">
             <div className="card p-3">
-              <div className="">
-                <button onClick={this.createItem} className="btn btn-primary">
-                  Add task
-                </button>
-              </div>
+
               {this.renderTabList()}
               <ul className="list-group list-group-flush">
                 {this.renderItems()}

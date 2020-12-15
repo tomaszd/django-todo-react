@@ -14,18 +14,30 @@ body {
 }
 .todo-title {
   cursor: pointer;
+
 }
 .completed-todo {
   text-decoration: line-through;
 }
 .tab-list > span {
-  padding: 10px 8px;
-  border: 5px solid #B82c34;
-  border-radius: 10px;
-  margin-right: 25px;
+
+  box-shadow: 0 4px #999;
+  display: inline-block;
+  padding: 8px 15px;
+  font-size: 16px;
+  margin:5px;
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4da6ff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 8px #999;
 }
 .tab-list > span.active {
-  background-color: #282c34;
+  background-color: #008000;
   color: #ffffff;
 }
+
