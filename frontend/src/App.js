@@ -26,6 +26,16 @@ class App extends Component {
     let max_length = 35;
     return str.length > max_length ? str.substring(0, max_length - 3) + "..." : str;
   };
+  compareTasks = function (a, b) {
+    if (a.priority < b.priority) {
+      return -1;
+    }
+    if (a.priority > b.priority) {
+      return 1;
+    }
+    return 0;
+  };
+
   refreshList = () => {
     axios
       .get(BACKEND_URL + "/api/todos/")
@@ -65,7 +75,10 @@ class App extends Component {
   renderItems = () => {
     const { viewCompleted } = this.state;
     const newItems = this.state.todoList.filter((item) => item.completed === viewCompleted);
-    return newItems.map((item) => (
+    console.log(newItems);
+    console.log(newItems.sort());
+    console.log(newItems.sort(this.compareTasks));
+    return newItems.sort(this.compareTasks).map((item) => (
       <li key={item.id} className="list-group-item d-flex justify-content-between align-items-center">
         <span
           className={`todo-title mr-2 ${this.state.viewCompleted ? "completed-todo" : ""}`}
