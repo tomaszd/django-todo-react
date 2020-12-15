@@ -1,27 +1,17 @@
 // frontend/src/components/Modal.js
 
 import React, { Component } from "react";
-import {
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Form,
-  FormGroup,
-  Input,
-  Label
-} from "reactstrap";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Input, Label } from "reactstrap";
 
 export default class CustomModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeItem: this.props.activeItem
+      activeItem: this.props.activeItem,
     };
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
     let { name, value } = e.target;
     if (e.target.type === "checkbox") {
       value = e.target.checked;
@@ -67,6 +57,21 @@ export default class CustomModal extends Component {
                 />
                 Completed
               </Label>
+            </FormGroup>
+            <FormGroup>
+              <Label for="priority">Priority</Label>
+              <select
+                className="form-control"
+                id="sel1"
+                name="priority"
+                value={this.state.activeItem.priority}
+                onChange={this.handleChange}
+              >
+                <option>Low</option>
+                <option>High</option>
+                <option>Medium</option>
+                <option></option>
+              </select>
             </FormGroup>
           </Form>
         </ModalBody>

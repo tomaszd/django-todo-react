@@ -14,6 +14,7 @@ class App extends Component {
         title: "",
         description: "",
         completed: false,
+        priority: "",
       },
       todoList: [],
     };
@@ -22,7 +23,7 @@ class App extends Component {
     this.refreshList();
   }
   truncate = function (str) {
-    let max_length = 40;
+    let max_length = 35;
     return str.length > max_length ? str.substring(0, max_length - 3) + "..." : str;
   };
   refreshList = () => {
@@ -70,7 +71,7 @@ class App extends Component {
           className={`todo-title mr-2 ${this.state.viewCompleted ? "completed-todo" : ""}`}
           title={item.description}
         >
-          {this.truncate(item.title)}{" "}
+          {this.truncate(item.title)} PRIO: {item.priority}
         </span>
         <span>
           <button onClick={() => this.handleToggle(item)} className="btn btn-secondary mr-2">
@@ -107,6 +108,7 @@ class App extends Component {
       title: "",
       description: "",
       completed: false,
+      priority: "Low",
     };
     this.setState({
       activeItem: item,
