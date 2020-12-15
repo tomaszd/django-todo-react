@@ -129,7 +129,12 @@ class App extends Component {
     console.log(item);
     item.completed=!item.completed;
     console.log(item.completed);
-    this.setState({ activeItem: item});
+    if (item.id) {
+      axios
+        .put(BACKEND_URL + `/api/todos/${item.id}/`, item)
+        .then(res => this.refreshList());
+      return;
+    }
   };
 
   render() {
