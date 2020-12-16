@@ -40,6 +40,7 @@ class App extends Component {
         int_prio_a = 3;
         break;
       default:
+        int_prio_a = 0;
         console.log("unsupported priority: " + int_prio_a);
     }
     switch (int_prio_b) {
@@ -53,6 +54,7 @@ class App extends Component {
         int_prio_b = 3;
         break;
       default:
+        int_prio_b = 0;
         console.log("unsupported priority: " + int_prio_b);
     }
     if (int_prio_a > int_prio_b) {
