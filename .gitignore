@@ -2,3 +2,7 @@ node_modules/
 /.idea/vcs.xml
 /backend/db.sqlite3
 /frontend/.eslintcache
+.idea/
+backend/backend/__pycache__/
+backend/todo/__pycache__/
+backend/todo/migrations/__pycache__/

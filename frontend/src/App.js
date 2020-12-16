@@ -109,12 +109,15 @@ class App extends Component {
     console.log(newItems.sort());
     console.log(newItems.sort(this.compareTasks));
     return newItems.sort(this.compareTasks).map((item) => (
-      <li key={item.id} className="list-group-item d-flex justify-content-between align-items-center">
+      <li
+        key={item.id}
+        className={`list-group-item d-flex justify-content-between align-items-center prio${item.priority}`}
+      >
         <span
           className={`todo-title mr-2 ${this.state.viewCompleted ? "completed-todo" : ""}`}
           title={item.description}
         >
-          {this.truncate(item.title)} PRIO: {item.priority}
+          {this.truncate(item.title)}
         </span>
         <span>
           <button onClick={() => this.handleToggle(item)} className="btn btn-secondary mr-2">

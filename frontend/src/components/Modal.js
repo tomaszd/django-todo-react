@@ -70,7 +70,6 @@ export default class CustomModal extends Component {
                 <option>Low</option>
                 <option>High</option>
                 <option>Medium</option>
-                <option></option>
               </select>
             </FormGroup>
           </Form>

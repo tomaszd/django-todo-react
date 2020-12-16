@@ -40,4 +40,19 @@ body {
   background-color: #008000;
   color: #ffffff;
 }
+.prioLow {
+
+  font-family: verdana;
+  margin:2px;
+}
+.prioMedium {
+  background-color:  #ffc266;
+  font-family: verdana;
+  margin:2px;
+}
+.prioHigh {
+  background-color: #ff8566;
+  font-family: verdana;
+  margin:2px;
+}
 
