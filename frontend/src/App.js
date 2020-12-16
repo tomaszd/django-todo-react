@@ -27,10 +27,38 @@ class App extends Component {
     return str.length > max_length ? str.substring(0, max_length - 3) + "..." : str;
   };
   compareTasks = function (a, b) {
-    if (a.priority < b.priority) {
+    let int_prio_a = a.priority;
+    let int_prio_b = b.priority;
+    switch (int_prio_a) {
+      case "Low":
+        int_prio_a = 1;
+        break;
+      case "Medium":
+        int_prio_a = 2;
+        break;
+      case "High":
+        int_prio_a = 3;
+        break;
+      default:
+        console.log("unsupported priority: " + int_prio_a);
+    }
+    switch (int_prio_b) {
+      case "Low":
+        int_prio_b = 1;
+        break;
+      case "Medium":
+        int_prio_b = 2;
+        break;
+      case "High":
+        int_prio_b = 3;
+        break;
+      default:
+        console.log("unsupported priority: " + int_prio_b);
+    }
+    if (int_prio_a > int_prio_b) {
       return -1;
     }
-    if (a.priority > b.priority) {
+    if (int_prio_a < int_prio_b) {
       return 1;
     }
     return 0;
