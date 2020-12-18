@@ -68,8 +68,8 @@ export default class CustomModal extends Component {
                 onChange={this.handleChange}
               >
                 <option>Low</option>
-                <option>High</option>
                 <option>Medium</option>
+                <option>High</option>
               </select>
             </FormGroup>
           </Form>

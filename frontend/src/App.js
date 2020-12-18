@@ -96,7 +96,7 @@ class App extends Component {
         <span onClick={() => this.displayCompleted(false)} className={this.state.viewCompleted ? "" : "active"}>
           Show tasks to do
         </span>
-        <button onClick={this.createItem} className="btn btn-primary mr-20">
+        <button onClick={this.createItem} className="btn btn-primary mr-5 ">
           Add task
         </button>
       </div>
@@ -120,14 +120,14 @@ class App extends Component {
           {this.truncate(item.title)}
         </span>
         <span>
-          <button onClick={() => this.handleToggle(item)} className="btn btn-secondary mr-2">
+          <button onClick={() => this.handleToggle(item)} className="btn btn-secondary btn-sm btn-success btn-block">
             {item.completed ? "Not completed" : "Complete Task"}
           </button>{" "}
-          <button onClick={() => this.editItem(item)} className="btn btn-primary mr-2">
+          <button onClick={() => this.editItem(item)} className="btn btn-primary btn-block btn-sm">
             Edit{" "}
           </button>{" "}
-          <button onClick={() => this.handleDelete(item)} className="btn btn-danger">
-            Delete{" "}
+          <button onClick={() => this.handleDelete(item)} className="btn btn-danger btn-block btn-sm">
+             Remove{" "}
           </button>
         </span>{" "}
       </li>

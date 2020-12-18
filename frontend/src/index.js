@@ -8,7 +8,7 @@
   import App from './App';
   import * as serviceWorker from './serviceWorker';
 
-  document. title = 'Task Manager';
+  document.title = 'Task Manager';
 
   ReactDOM.render(<App />, document.getElementById('root'));
   // If you want your app to work offline and load faster, you can change
