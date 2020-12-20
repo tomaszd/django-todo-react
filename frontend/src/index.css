@@ -21,6 +21,7 @@ body {
   text-decoration: line-through;
 }
 .tab-list > span {
+  width:100%;
 
   box-shadow: 0 4px #999;
   display: inline-block;

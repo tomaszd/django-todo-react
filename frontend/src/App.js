@@ -96,7 +96,7 @@ class App extends Component {
         <span onClick={() => this.displayCompleted(false)} className={this.state.viewCompleted ? "" : "active"}>
           Show tasks to do
         </span>
-        <button onClick={this.createItem} className="btn btn-primary mr-5 ">
+        <button onClick={this.createItem} className="float-right btn btn-primary mr-5  mx-auto">
           Add task
         </button>
       </div>
