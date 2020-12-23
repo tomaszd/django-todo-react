@@ -24,7 +24,9 @@ class App extends Component {
   }
   truncate = function (str) {
     let max_length = 35;
-    return str.length > max_length ? str.substring(0, max_length - 3) + "..." : str;
+    return str.length > max_length
+      ? str.substring(0, max_length - 3) + "..."
+      : str;
   };
   compareTasks = function (a, b) {
     let int_prio_a = a.priority;
@@ -90,13 +92,22 @@ class App extends Component {
   renderTabList = () => {
     return (
       <div className="my-5 tab-list ">
-        <span onClick={() => this.displayCompleted(true)} className={this.state.viewCompleted ? "active" : ""}>
+        <span
+          onClick={() => this.displayCompleted(true)}
+          className={this.state.viewCompleted ? "active" : ""}
+        >
           Show completed{" "}
         </span>
-        <span onClick={() => this.displayCompleted(false)} className={this.state.viewCompleted ? "" : "active"}>
+        <span
+          onClick={() => this.displayCompleted(false)}
+          className={this.state.viewCompleted ? "" : "active"}
+        >
           Show tasks to do
         </span>
-        <button onClick={this.createItem} className="float-right btn btn-primary mr-5  mx-auto">
+        <button
+          onClick={this.createItem}
+          className="float-right btn btn-primary mr-5  mx-auto"
+        >
           Add task
         </button>
       </div>
@@ -104,7 +115,9 @@ class App extends Component {
   };
   renderItems = () => {
     const { viewCompleted } = this.state;
-    const newItems = this.state.todoList.filter((item) => item.completed === viewCompleted);
+    const newItems = this.state.todoList.filter(
+      (item) => item.completed === viewCompleted
+    );
     console.log(newItems);
     console.log(newItems.sort());
     console.log(newItems.sort(this.compareTasks));
@@ -114,20 +127,31 @@ class App extends Component {
         className={`list-group-item d-flex justify-content-between align-items-center prio${item.priority}`}
       >
         <span
-          className={`todo-title mr-2 ${this.state.viewCompleted ? "completed-todo" : ""}`}
+          className={`todo-title mr-2 ${
+            this.state.viewCompleted ? "completed-todo" : ""
+          }`}
           title={item.description}
         >
           {this.truncate(item.title)}
         </span>
         <span>
-          <button onClick={() => this.handleToggle(item)} className="btn btn-secondary btn-sm btn-success btn-block">
+          <button
+            onClick={() => this.handleToggle(item)}
+            className="btn btn-secondary btn-sm btn-success btn-block"
+          >
             {item.completed ? "Not completed" : "Complete Task"}
           </button>{" "}
-          <button onClick={() => this.editItem(item)} className="btn btn-primary btn-block btn-sm">
+          <button
+            onClick={() => this.editItem(item)}
+            className="btn btn-primary btn-block btn-sm"
+          >
             Edit{" "}
           </button>{" "}
-          <button onClick={() => this.handleDelete(item)} className="btn btn-danger btn-block btn-sm">
-             Remove{" "}
+          <button
+            onClick={() => this.handleDelete(item)}
+            className="btn btn-danger btn-block btn-sm"
+          >
+            Remove{" "}
           </button>
         </span>{" "}
       </li>
@@ -141,13 +165,19 @@ class App extends Component {
   handleSubmit = (item) => {
     this.toggle();
     if (item.id) {
-      axios.put(BACKEND_URL + `/api/todos/${item.id}/`, item).then((res) => this.refreshList());
+      axios
+        .put(BACKEND_URL + `/api/todos/${item.id}/`, item)
+        .then((res) => this.refreshList());
       return;
     }
-    axios.post(BACKEND_URL + "/api/todos/", item).then((res) => this.refreshList());
+    axios
+      .post(BACKEND_URL + "/api/todos/", item)
+      .then((res) => this.refreshList());
   };
   handleDelete = (item) => {
-    axios.delete(BACKEND_URL + `/api/todos/${item.id}`).then((res) => this.refreshList());
+    axios
+      .delete(BACKEND_URL + `/api/todos/${item.id}`)
+      .then((res) => this.refreshList());
   };
   createItem = () => {
     const item = {
@@ -172,7 +202,9 @@ class App extends Component {
     item.completed = !item.completed;
     console.log(item.completed);
     if (item.id) {
-      axios.put(BACKEND_URL + `/api/todos/${item.id}/`, item).then((res) => this.refreshList());
+      axios
+        .put(BACKEND_URL + `/api/todos/${item.id}/`, item)
+        .then((res) => this.refreshList());
       return;
     }
   };
@@ -180,16 +212,27 @@ class App extends Component {
   render() {
     return (
       <main className="content">
-        <h1 className="text-white text-uppercase text-center my-4"> Todo app </h1>{" "}
+        <h1 className="text-white text-uppercase text-center my-4">
+          {" "}
+          Todo app{" "}
+        </h1>{" "}
         <div className="row ">
           <div className="col-md-6 col-sm-10 mx-auto p-0">
             <div className="card p-3">
-              {this.renderTabList()} <ul className="list-group list-group-flush"> {this.renderItems()} </ul>{" "}
+              {this.renderTabList()}{" "}
+              <ul className="list-group list-group-flush">
+                {" "}
+                {this.renderItems()}{" "}
+              </ul>{" "}
             </div>{" "}
           </div>{" "}
         </div>{" "}
         {this.state.modal ? (
-          <Modal activeItem={this.state.activeItem} toggle={this.toggle} onSave={this.handleSubmit} />
+          <Modal
+            activeItem={this.state.activeItem}
+            toggle={this.toggle}
+            onSave={this.handleSubmit}
+          />
         ) : null}{" "}
       </main>
     );
