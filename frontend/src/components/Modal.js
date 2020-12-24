@@ -72,7 +72,6 @@ export default class CustomModal extends Component {
               <Label for="priority">Priority</Label>
               <select
                 className="form-control"
-                id="sel1"
                 name="priority"
                 value={this.state.activeItem.priority}
                 onChange={this.handleChange}
@@ -90,10 +89,10 @@ export default class CustomModal extends Component {
                 value={this.state.activeItem.category}
                 onChange={this.handleChange}
               >
+                <option></option>
                 <option>Work</option>
                 <option>Home</option>
                 <option>Other</option>
-                <option></option>
               </select>
             </FormGroup>
           </Form>
