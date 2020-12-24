@@ -1,6 +1,5 @@
-
 /* frontend/src/index.css  */
- 
+
 body {
   margin: 0;
   padding: 0;
@@ -15,19 +14,18 @@ body {
 .todo-title {
   cursor: pointer;
   font-size: large;
-
 }
 .completed-todo {
   text-decoration: line-through;
 }
 .tab-list > span {
-  width:100%;
+  width: 100%;
 
   box-shadow: 0 4px #999;
   display: inline-block;
   padding: 8px 15px;
   font-size: 16px;
-  margin:5px;
+  margin: 5px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -43,18 +41,24 @@ body {
   color: #ffffff;
 }
 .prioLow {
-
   font-family: verdana;
-  margin:2px;
+  background-color: #d9ffcc;
+  margin: 2px;
 }
 .prioMedium {
-  background-color:  #ffc266;
+  background-color: #ffc266;
   font-family: verdana;
-  margin:2px;
+  margin: 2px;
 }
 .prioHigh {
   background-color: #ff8566;
   font-family: verdana;
-  margin:2px;
+  margin: 2px;
 }
 
+.category-home {
+  font-style: italic;
+}
+.category-work {
+  font-weight: bold;
+}

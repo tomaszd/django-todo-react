@@ -1,7 +1,17 @@
 // frontend/src/components/Modal.js
 
 import React, { Component } from "react";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Input, Label } from "reactstrap";
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Form,
+  FormGroup,
+  Input,
+  Label,
+} from "reactstrap";
 
 export default class CustomModal extends Component {
   constructor(props) {
@@ -70,6 +80,20 @@ export default class CustomModal extends Component {
                 <option>Low</option>
                 <option>Medium</option>
                 <option>High</option>
+              </select>
+            </FormGroup>
+            <FormGroup>
+              <Label for="category">Category</Label>
+              <select
+                className="form-control"
+                name="category"
+                value={this.state.activeItem.category}
+                onChange={this.handleChange}
+              >
+                <option>Work</option>
+                <option>Home</option>
+                <option>Other</option>
+                <option></option>
               </select>
             </FormGroup>
           </Form>
