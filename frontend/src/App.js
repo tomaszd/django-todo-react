@@ -15,6 +15,7 @@ class App extends Component {
         description: "",
         completed: false,
         priority: "",
+        category: "",
       },
       todoList: [],
     };
@@ -124,7 +125,11 @@ class App extends Component {
     return newItems.sort(this.compareTasks).map((item) => (
       <li
         key={item.id}
-        className={`list-group-item d-flex justify-content-between align-items-center prio${item.priority}`}
+        className={`list-group-item d-flex justify-content-between align-items-center prio${
+          item.priority
+        } ${item.category === "Work" ? "category-work" : ""} ${
+          item.category === "Home" ? "category-home" : ""
+        }`}
       >
         <span
           className={`todo-title mr-2 ${
@@ -132,6 +137,7 @@ class App extends Component {
           }`}
           title={item.description}
         >
+          {item.category != null ? item.category + "-" : ""}
           {this.truncate(item.title)}
         </span>
         <span>
